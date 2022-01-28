@@ -70,6 +70,7 @@ export class AddContractComponent implements OnInit {
  
        this.toastr.error('Dress adding failed');
      });
+     window.location.reload();
   }
 
 }

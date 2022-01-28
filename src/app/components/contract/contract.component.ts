@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import {MatDialog} from '@angular/material/dialog';
-import {MatPaginator} from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ToastrService } from 'ngx-toastr';
@@ -29,6 +29,7 @@ export class ContractComponent implements OnInit {
   displayedColumns: string[] = ['contract_id', 'hotel_name', 'start_date', 'end_date', 'view', 'edit', 'delete'];
   dataSource: any;
   allContracts: any;
+  token: any;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -54,13 +55,13 @@ export class ContractComponent implements OnInit {
   getAllHotels() {
     this.contractService.getAllContracts().subscribe(data => {
       this.allContracts = data;
-     
-      for(let i = 0; i < this.allContracts.length; i++){
+
+      for (let i = 0; i < this.allContracts.length; i++) {
         ELEMENT_DATA[i] = {
           Contract_Id: this.allContracts[i].cid,
           Hotel_Name: this.allContracts[i].hotel.name,
-          Start_Date: this.allContracts[i].startDate.toLocaleString().substring(0,10),
-          End_Date: this.allContracts[i].endDate.toLocaleString().substring(0,10)
+          Start_Date: this.allContracts[i].startDate.toLocaleString().substring(0, 10),
+          End_Date: this.allContracts[i].endDate.toLocaleString().substring(0, 10)
         }
       }
       this.dataSource = new MatTableDataSource(ELEMENT_DATA);
@@ -71,20 +72,22 @@ export class ContractComponent implements OnInit {
   }
 
   openAddContractDialog(): void {
-    const dialogRef = this.dialog.open(AddContractComponent, { 
+    const dialogRef = this.dialog.open(AddContractComponent, {
       width: '400px'
     });
   }
 
   openViewContractDialog(cid: number): void {
-    this.contractService.setId(cid);
+
+    this.token = cid;
+    localStorage.setItem("token", this.token);
     this.router.navigateByUrl('/contract/{cid}');
   }
 
-  openDeleteContractDialog(cid:number): void{
+  openDeleteContractDialog(cid: number): void {
     this.contractService.setId(cid);
     const dialogRef = this.dialog.open(DeleteContractComponent, {
-      width: '250px',  
+      width: '250px',
     });
   }
 
