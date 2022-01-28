@@ -1,0 +1,49 @@
+/* Structure */
+table {
+    width: 100%;
+}
+  
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+.container{
+    padding: 5%;
+}
+
+.delete{
+    background-color: rgb(209, 26, 42);
+    color: white;
+    transform: scale(1) !important;
+
+}
+.edit{
+    background-color: rgb(73, 73, 218);
+    color: white;
+    transform: scale(1) !important;
+}
+.view{
+    background-color: green;
+    color: white;
+    transform: scale(1) !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .delete{
+        background-color: rgb(209, 26, 42);
+        color: white;
+        transform: scale(1) !important;
+    }
+    .edit{
+        background-color: rgb(73, 73, 218);
+        color: white;
+        transform: scale(1) !important;
+    }
+    .view{
+        background-color: green;
+        color: white;
+        transform: scale(1) !important;
+    }
+  }
+  

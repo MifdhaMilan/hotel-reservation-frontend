@@ -1,0 +1,27 @@
+<form [formGroup]="addRoomForm" (ngSubmit)="onAddRoomSubmit()" #f="ngForm">
+    <h1 mat-dialog-title style="text-align:center;">New Room Type</h1>
+    <!-- <img mat-card-image src="https://www.cimc.lk/images/2019/01/17/gala.jpg"> -->
+    <mat-dialog-content>
+        <div class="address">
+            <p>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Room Type</mat-label>
+                    <input matInput formControlName="name" placeholder="Enter room type name" required />
+                    <mat-error>please enter room type name</mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Maximum Adults</mat-label>
+                    <input matInput formControlName="maxAdult" placeholder="Enter maximum adults per room" required />
+                    <mat-error>please enter maximum number of adults</mat-error>
+                </mat-form-field>
+            </p>
+        </div>
+        <br>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button type="submit" [disabled]="!f.valid">OK</button>
+    </mat-dialog-actions>
+</form>

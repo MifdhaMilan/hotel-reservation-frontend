@@ -1,0 +1,46 @@
+<form [formGroup]="editHotelForm" (ngSubmit)="onEditHotelSubmit()" #f="ngForm">
+    <h1 mat-dialog-title style="text-align:center;">New Hotel</h1>
+    <!-- <img mat-card-image src="https://www.cimc.lk/images/2019/01/17/gala.jpg"> -->
+    <mat-dialog-content>
+        <p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Hotel Name</mat-label>
+                <input matInput formControlName="name" placeholder="Enter Hotel Name" required />
+                <mat-error>please enter Name</mat-error>
+            </mat-form-field>
+        </p>
+        <input class="ng-hide" id="input-file-id" (change)="fileUpload($event)" type="file" required/>
+        <div formGroupName="address">
+            <br />
+            <label>Address</label>
+            <p>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Number</mat-label>
+                    <input matInput formControlName="no" required />
+                    <mat-error>please enter address number</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Street</mat-label>
+                    <input matInput formControlName="street" required />
+                    <mat-error>please enter street</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput formControlName="city" required />
+                    <mat-error>please enter city</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <input matInput formControlName="country" required />
+                    <mat-error>please enter country</mat-error>
+                </mat-form-field>
+            </p>
+        </div>
+        <br>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button (click)="reset()">Reset</button>
+        <button mat-raised-button type="submit" [disabled]="!f.valid">OK</button>
+    </mat-dialog-actions>
+</form>

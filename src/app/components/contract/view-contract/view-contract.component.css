@@ -1,0 +1,57 @@
+.example-card {
+    max-width: 400px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  table {
+    width: 100%;
+  }
+  .example-button-row {
+    display: table-cell;
+    width: 50px;
+    margin: 2px 2px 2px 0;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 100px;
+  }
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 50px;
+  }
+  button[mat-mini-fab] {
+    transform: scale(0.8) !important;
+   }
+   .delete{
+       background-color: rgb(226, 35, 35);
+       transform: scale(1) !important;
+
+   }
+   .edit{
+       background-color: rgb(73, 73, 218);
+       transform: scale(1) !important;
+   }
+   th.mat-header-cell,td.mat-cell {
+    text-align: center !important;
+  }
+  .image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-items: left;
+     
+  }
+  .header{
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 100px;
+  }
+
