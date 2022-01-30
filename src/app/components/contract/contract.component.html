@@ -58,7 +58,8 @@
       <th mat-header-cell *matHeaderCellDef> Edit </th>
       <td mat-cell *matCellDef="let element">
         <div class="example-button-container">
-          <button mat-mini-fab class="edit" aria-label="Example icon button with a plus one icon">
+          <button mat-mini-fab class="edit" (click)="openEditContractDialog(element.Contract_Id)"
+           aria-label="Example icon button with a plus one icon">
             <mat-icon>edit</mat-icon>
           </button>
         </div>

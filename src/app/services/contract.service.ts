@@ -44,6 +44,11 @@ export class ContractService {
  
     return this.http.delete(this.apiUrl + 'delete-room-type-contract/' + rid + '/'+cid);
   }
+  editContract(model: any){
+    
+    return this.http.put(this.apiUrl + 'update-contract', model);
+  }
+
 
   public setId(id: number) {
     this.id = id;

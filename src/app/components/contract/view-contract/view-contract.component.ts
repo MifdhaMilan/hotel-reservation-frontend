@@ -56,6 +56,8 @@ export class ViewContractComponent implements OnInit {
       console.log(this.roomTypes);
 
     })
+    console.log("this.contract");
+    
 
   }
 

@@ -9,6 +9,7 @@ import { AddContractComponent } from './add-contract/add-contract.component';
 import { DeleteContractComponent } from './delete-contract/delete-contract.component';
 import { ViewContractComponent } from './view-contract/view-contract.component';
 import { Router } from '@angular/router';
+import { EditContractComponent } from './edit-contract/edit-contract.component';
 
 export interface PeriodicElement {
   Contract_Id: number;
@@ -73,6 +74,13 @@ export class ContractComponent implements OnInit {
 
   openAddContractDialog(): void {
     const dialogRef = this.dialog.open(AddContractComponent, {
+      width: '400px'
+    });
+  }
+
+  openEditContractDialog(cid: number): void {
+    this.contractService.setId(cid);
+    const dialogRef = this.dialog.open(EditContractComponent, {
       width: '400px'
     });
   }

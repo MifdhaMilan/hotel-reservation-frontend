@@ -37,6 +37,7 @@ import { AddContractComponent } from './components/contract/add-contract/add-con
 import { ViewContractComponent } from './components/contract/view-contract/view-contract.component';
 import { DeleteContractComponent } from './components/contract/delete-contract/delete-contract.component';
 import { DeleteRoomTypeContractComponent } from './components/contract/view-contract/delete-room-type-contract/delete-room-type-contract.component';
+import { EditContractComponent } from './components/contract/edit-contract/edit-contract.component';
 
 
 
@@ -54,7 +55,8 @@ import { DeleteRoomTypeContractComponent } from './components/contract/view-cont
     AddContractComponent,
     ViewContractComponent,
     DeleteContractComponent,
-    DeleteRoomTypeContractComponent
+    DeleteRoomTypeContractComponent,
+    EditContractComponent
     
   ],
   imports: [
